@@ -1,5 +1,180 @@
-<html>
-  <body>
-    <h1>Init</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calypso Heavy Industries (CHI)</title>
+    <link rel="icon" href="calypso.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Inconsolata&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: white;
+            text-align: center;
+            margin: 0;
+        }
+        img {
+            margin-top: 50px;
+            max-width: 50%;
+            border-radius: 10px;
+            pointer-events: none;
+            user-select: none;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #333;
+            margin: 20px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .content-wrapper {
+            min-height: 100%;
+            position: relative;
+            padding-bottom: 60px; /* Footer height */
+        }
+        #contact-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #contact-button:hover {
+            background-color: #555;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fafafa;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            font-family: 'Inconsolata', monospace;
+            position: relative;
+            text-align: left;
+            overflow: auto;
+            min-width: 460px;
+            max-width: 460px;
+            max-height: 70vh - 60px;
+        }
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            height: 60px; /* Footer height */
+            text-align: center;
+            background-color: #f1f1f1; /* Optional: background color */
+            line-height: 60px; /* Align text vertically */
+        }
+    </style>
+</head>
+<body>
+    <button id="contact-button">Contact</button>
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Email: <a href="mailto:contact@calypso.pub">contact@calypso.pub</a><pre><br>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=qIib
+-----END PGP PUBLIC KEY BLOCK-----</pre></p>
+        </div>
+    </div>
+    <img src="calypso.png" alt="Calypso Heavy Industries" draggable="false">
+    <h1>Calypso Heavy Industries</h1>
+    <h2>Shadows Dance on the Shore</h2>
+    <footer>
+        Calypso Heavy Industries &copy;
+    </footer>
+    <script>
+var modal = document.getElementById("contact-modal");
+var btn = document.getElementById("contact-button");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+    </script>
+</body>
 </html>
