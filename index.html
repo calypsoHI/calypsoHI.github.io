@@ -53,8 +53,8 @@
             bottom: -35px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #bd3939;
-            color: white;
+            background-color: #E1CDB5;
+            color: #474044;
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.75rem;
@@ -67,10 +67,7 @@
         .icon-link:hover::after {
             visibility: visible;
             opacity: 0.7;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
+            transform: translate(-50%, -150%);
         }
         img {
             max-width: 100%;
@@ -87,7 +84,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(225,205,181,0.5);
             z-index: 1000;
         }
         .modal-content {
@@ -109,22 +106,36 @@
             cursor: pointer;
             font-size: 1.5rem;
         }
+        .content-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 20px; /* Spacing between image and icons */
+        }
     </style>
 </head>
 <body>
     <button id="contact-button">Contact</button>
-    <img src="chi.png" draggable="false">
-    <div class="button-container">
-        <a href="#" style="padding-right: 20px;" class="icon-link" data-tooltip="Labs">
-            <span class="material-symbols-outlined">
-                rebase_edit
-            </span>
-        </a>
-        <a href="#" style="padding-left: 20px;" class="icon-link" data-tooltip="Design">
-            <span class="material-symbols-outlined">
-                texture_add
-            </span>
-        </a>
+    <div class="content-container">
+        <img src="chi.png" draggable="false">
+        
+        <div class="icon-container">
+            <a href="#" class="icon-link" style="padding: 30px;" data-tooltip="Labs">
+                <span class="material-symbols-outlined">
+                    rebase_edit
+                </span>
+            </a>
+            <a href="#" class="icon-link" style="padding: 30px;" data-tooltip="Design">
+                <span class="material-symbols-outlined">
+                    texture_add
+                </span>
+            </a>
+        </div>
     </div>
     <div id="contact-modal" class="modal">
         <div class="modal-content">
